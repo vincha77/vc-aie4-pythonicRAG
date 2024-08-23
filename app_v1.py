@@ -118,7 +118,7 @@ chat_model_name = {
 }
 
 openai_embed_kwargs = {
-    'model': 'text-embedding-3-small',
+    'model': 'text-embedding-3-large',
     # With the `text-embedding-3` class
     # of models, you can specify the size
     # of the embeddings you want returned.
@@ -128,32 +128,48 @@ openai_embed_kwargs = {
 retriever_kwargs = {
     'search_type': 'similarity',
     'search_kwargs': {
-        'k': 10
+        'k': 20
     }
 }
 
 system_prompt = (
         """You are an assistant for question-answering tasks.
+        You will be given political speeches by leading politicians and
+        will be asked questions based on these speeches.
+
         Use the following pieces of retrieved context to answer 
         the question. 
         
         You must answer the question only based on the context provided.
+        
         If you don't know the answer or if the context does not provide sufficient information, 
         then say that you don't know. 
         
         Think through your answer step-by-step.
-        
-        Use a maximum of ten sentences in your answer.
+
         \n\n
+
+        Context:
         {context}
         """
     )
 
-custom_rag_template = """Use the following pieces of context to answer the question at the end.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
-Use three sentences maximum and keep the answer as concise as possible.
-Always say "thanks for asking!" at the end of the answer.
+custom_rag_template = """\
+You are an assistant for question-answering tasks.
+You will be given political speeches by leading politicians and
+will be asked questions based on these speeches.
 
+Use the following pieces of retrieved context to answer 
+the question. 
+
+You must answer the question only based on the context provided.
+
+If you don't know the answer or if the context does not provide sufficient information, 
+then say that you don't know. 
+
+Think through your answer step-by-step.
+
+Context:
 {context}
 
 Question: 
