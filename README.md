@@ -8,6 +8,24 @@ pinned: false
 license: apache-2.0
 ---
 
+# Summary
+
+This is my completed pythonic RAG assignment, completed for Session 3 of the AI Engineering Cohort 4.
+I implemented the following:
+1. Allow user to upload TWO documents (instead of a single document)
+2. Format of doc: they can be either text files or pdf docs.
+3. Text splitter - RecursiveTextSplitter from Langchain
+4. Vector store - using Chroma db
+5. Coded the chain in two ways for my own education
+    a. traditional Langchain syntax - two step process of with 'stuff documents chain' and 'retrieval chain'
+    b. using LCEL syntax with Runnables
+6. Most processing pythonic steps implemented via a single class with modular components
+    that can be replaced with others (e.g., text splitter, vector store, etc.)
+
+
+# Retaining the original content of the README.md for my future reference!!
+
+
 # Deploying Pythonic Chat With Your Text File Application
 
 In today's breakout rooms, we will be following the processed that you saw during the challenge - for reference, the instructions for that are available [here](https://github.com/AI-Maker-Space/Beyond-ChatGPT/tree/main).

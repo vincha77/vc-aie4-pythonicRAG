@@ -1,1 +1,6 @@
 __pycache__/
+.env
+cl_qa_example.py
+app_v0.py
+data/
+myutils/

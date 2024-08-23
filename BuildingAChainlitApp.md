@@ -133,6 +133,13 @@ Simply put, this downloads the file as a temp file, we load it in with `TextFile
 
 Why do we want to support streaming? What about streaming is important, or useful?
 
+#### ANSWER #1:
+
+Streaming is needed to accommodate transfer of data packets over a network (eg internet).
+Important because nearly all applications are written to be hosted on a network 
+(corporate intranet or over the internet) to be used by many people.
+
+
 ## On Chat Start:
 
 The next scope is where "the magic happens". On Chat Start is when a user begins a chat session. This will happen whenever a user opens a new chat window, or refreshes an existing chat window.
@@ -174,6 +181,12 @@ Now, we'll save that into our user session!
 ### QUESTION #2: 
 
 Why are we using User Session here? What about Python makes us need to use this? Why not just store everything in a global variable?
+
+### ANSWER #2:
+User Session creates a scope akin to a local scope in Python.  i.e., setting up and managing variables, etc. for the
+duration of a chat session with a specific user.  This provides a clean separation across users (which would not
+happen if everything was stored in a global variable) and lets the app function smoothly for all users (e.g., by preventing the occurrence of race conditions).
+
 
 ## On Message
 
